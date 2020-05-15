@@ -7,8 +7,24 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   password = '';
+  useLetters = false;
+  useNumbers = false;
+  useSymbols = false;
+
+  onChangeUseLetters() {
+    this.useLetters = !this.useLetters;
+  }
+
+  onChangeUseNumbers() {
+    this.useNumbers = !this.useNumbers;
+  }
+
+  onChangeUseSymbols() {
+    this.useSymbols = !this.useSymbols;
+  }
 
   onButtonClick() {
+    console.log(this.useLetters, this.useNumbers, this.useSymbols);
     this.password = 'New psw';
   }
 }
