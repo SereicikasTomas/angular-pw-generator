@@ -14,4 +14,22 @@ app-root {
   width: 100vw;
   height: 100vh;
   display: flex;
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #121212;
+    --text-color: #dfdfdf;
+    --shadow-color: #000000;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-color: #dfdfdf;
+    --text-color: #121212;
+    --shadow-color: #acacac;
+  }
 }

@@ -3,7 +3,7 @@
   width: 40rem;
   border-radius: 5px;
   padding: 4rem;
-  box-shadow: 0rem 1rem 2rem lightgray;
+  box-shadow: 0rem 1rem 2rem var(--shadow-color);
   animation: appear 1s ease forwards;
 
   h1 {
@@ -64,7 +64,7 @@
     }
     &:not(:disabled):hover {
       color: #328f96;
-      background-color: white;
+      background-color: transparent;
       border: 2px solid #328f96;
     }
   }
@@ -76,7 +76,9 @@
     padding: 2rem;
     font-size: 2rem;
     outline: 0;
-    border: 1px dotted lightgray;
+    border: 1px dotted var(--shadow-color);
+    color: var(--text-color);
+    background-color: transparent;
   }
 
   &__checkbox {
