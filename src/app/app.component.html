@@ -1,47 +1,67 @@
-<h1>Password Generator</h1>
+<div class="generator">
+  <h1>Password Generator</h1>
 
-<div>
-  <label for="">Select Length</label>
-  <input
-    (input)="onChangeLength($event.target.value)"
-    type="range"
-    min="3"
-    max="20"
-    [value]="length"
-  />
-  <input type="text" [value]="length" readonly />
-</div>
+  <div class="generator__group">
+    <label for="">Select Length: {{ length }}</label>
+    <input
+      (input)="onChangeLength($event.target.value)"
+      type="range"
+      min="3"
+      max="25"
+      [value]="length"
+      class="group__range"
+    />
+  </div>
 
-<div>
-  <label for="">Use Letters</label>
-  <input
-    (change)="onChangeUseLetters()"
-    type="checkbox"
-    [checked]="useLetters"
-  />
-</div>
-<div>
-  <label for="">Use Numbers</label>
-  <input
-    (change)="onChangeUseNumbers()"
-    type="checkbox"
-    [checked]="useNumbers"
-  />
-</div>
-<div>
-  <label for="">Use Symbols</label>
-  <input
-    (change)="onChangeUseSymbols()"
-    type="checkbox"
-    [checked]="useSymbols"
-  />
-</div>
+  <div class="generator__group">
+    <input
+      (change)="onChangeUseLetters()"
+      type="checkbox"
+      [checked]="useLetters"
+      id="letters"
+      class="group__checkbox"
+    />
+    <label class="group__label" for="letters"
+      ><span class="check"></span>Use Letters</label
+    >
+  </div>
+  <div class="generator__group">
+    <input
+      (change)="onChangeUseNumbers()"
+      type="checkbox"
+      [checked]="useNumbers"
+      id="numbers"
+      class="group__checkbox"
+    />
+    <label class="group__label" for="numbers"
+      ><span class="check"></span>Use Numbers</label
+    >
+  </div>
+  <div class="generator__group">
+    <input
+      (change)="onChangeUseSymbols()"
+      type="checkbox"
+      [checked]="useSymbols"
+      id="symbols"
+      class="group__checkbox"
+    />
+    <label class="group__label" for="symbols">
+      <span class="check"></span> Symbols
+    </label>
+  </div>
 
-<div>
-  <button (click)="onButtonClick()">Generate</button>
-</div>
+  <div class="generator__group">
+    <button
+      [disabled]="!(useLetters || useNumbers || useSymbols)"
+      (click)="onButtonClick()"
+      class="group__button"
+    >
+      Generate
+    </button>
+  </div>
 
-<div>
-  <label for="">Your Password</label>
-  <input type="text" [value]="password" />
+  <div class="generator__group">
+    <label for="">Your Password</label>
+    <input type="text" [value]="password" class="group__text" readonly />
+  </div>
 </div>
