@@ -60,7 +60,7 @@
     </button>
   </div>
 
-  <div class="generator__group">
+  <div class="generator__group" *ngIf="password">
     <label for="">Your Password</label>
     <input type="text" [value]="password" class="group__text" readonly />
   </div>

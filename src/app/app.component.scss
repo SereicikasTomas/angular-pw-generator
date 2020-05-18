@@ -1,5 +1,5 @@
 .generator {
-  margin: auto;
+  margin: 12vh auto auto;
   width: 40rem;
   border-radius: 5px;
   padding: 4rem;
@@ -76,7 +76,7 @@
     padding: 2rem;
     font-size: 2rem;
     outline: 0;
-    border: 1px dotted var(--shadow-color);
+    border: 1px dotted var(--text-color);
     color: var(--text-color);
     background-color: transparent;
   }
