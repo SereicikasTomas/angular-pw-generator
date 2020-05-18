@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  length = 0;
+  length = 10;
   password = '';
   useLetters = false;
   useNumbers = false;
@@ -30,7 +30,21 @@ export class AppComponent {
   }
 
   onButtonClick() {
-    console.log(this.useLetters, this.useNumbers, this.useSymbols);
-    this.password = 'New psw';
+    const numbers = '1234567890';
+    const letters = 'abcdefghijklmnopqrstuvwyz';
+    const symbols = '!@#$%^&(){}[]';
+
+    let validChars = '';
+    if (this.useLetters) validChars += letters;
+    if (this.useNumbers) validChars += numbers;
+    if (this.useSymbols) validChars += symbols;
+
+    let generatedPassword = '';
+    for (let i = 0; i < this.length; i++) {
+      const index = Math.floor(Math.random() * validChars.length);
+      generatedPassword += validChars[index];
+    }
+
+    this.password = generatedPassword;
   }
 }
